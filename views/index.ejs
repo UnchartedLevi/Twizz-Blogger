@@ -1,0 +1,37 @@
+<%-include("header.ejs") %>
+    <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
+    <li class="nav-item"><a href="/blogs" class="nav-link">Blogs</a></li>
+
+    </ul>
+    </header>
+    </div>
+    <main>
+
+        <div id="flex">
+            <div class="px-4 py-5 my-5 text-center">
+                <h1 class="display-5 fw-bold text-body-emphasis">Enter your
+                    <%if(locals.formData !="" ){%>
+                        <%var ans="Next" ; %>
+                            <%= ans%>
+                                <% } else { %>
+                                    <%var ans="First" ; %>
+                                        <%= ans%>
+                                            <% } %>
+                                                Blog
+                </h1>
+                <form action="/compose" method="post">
+                    <textarea name="blogContent" class="form-control w-100" rows="5"
+                        placeholder="Write your blog here..." required></textarea>
+                    <br>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <button type="submit" class="btn btn-primary btn-lg px-4 gap-3">Blog it</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+
+
+
+
+        <%-include("footer.ejs") %>
